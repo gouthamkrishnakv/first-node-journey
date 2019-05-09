@@ -1,0 +1,11 @@
+<application>
+  <component name="MaterialThemeConfig">
+    <option name="isCompactMenus" value="true" />
+    <option name="isContrastMode" value="true" />
+    <option name="isWizardShown" value="true" />
+    <option name="accentColor" value="fafafa" />
+    <option name="selectedTheme" value="DRACULA" />
+    <option name="userId" value="-422aa03d:16a89383fd0:-8000" />
+    <option name="version" value="3.9.3" />
+  </component>
+</application>
