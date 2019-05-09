@@ -1,0 +1,12 @@
+{
+  "name": "first-node-journey",
+  "version": "1.0.0",
+  "author": "Goutham Krishna K V",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "ejs": "^2.6.1",
+    "body-parser": "^1.19.0"
+  }
+}
