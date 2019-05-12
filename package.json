@@ -1,0 +1,16 @@
+{
+  "name": "first-node-journey",
+  "version": "1.0.0",
+  "author": "Goutham Krishna K V",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "heroku-cli": "^7.0.9",
+    "request": "^2.88.0"
+  }
+}

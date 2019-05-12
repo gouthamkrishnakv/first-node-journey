@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weather Application</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <fieldset>
+        <form action="/" method="post">
+            <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+            <input type="submit" class="ghost-button" value="Get Weather Info">
+        </form>
+        <% if(weather !== null) { %>
+
+            <p>Location : <%=weather.name%>.</p>
+            <p>Temperature : <%=weather.main.temp%>&degC. </p>
+            <p>Pressure : <%=weather.main.pressure%> kPa.</p>
+            <p>Humidity : <%=weather.main.humidity%>%.</p>
+        <% } else { %>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        <% } %>
+        <% if(error !== null)  {%>
+            <p><%=error%></p>
+        <% } else{ %>
+            <p></p>
+        <% } %>
+    </fieldset>
+    <h5>Application created by <%=name%>.</h5>
+</div>
+</body>
+</html>
