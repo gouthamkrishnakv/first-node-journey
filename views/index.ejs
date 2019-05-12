@@ -19,11 +19,19 @@
             <p>Temperature : <%=weather.main.temp%>&degC. </p>
             <p>Pressure : <%=weather.main.pressure%> kPa.</p>
             <p>Humidity : <%=weather.main.humidity%>%.</p>
+        <% } else { %>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
         <% } %>
         <% if(error !== null)  {%>
             <p><%=error%></p>
+        <% } else{ %>
+            <p></p>
         <% } %>
     </fieldset>
+    <h5>Application created by <%=name%>.</h5>
 </div>
 </body>
 </html>

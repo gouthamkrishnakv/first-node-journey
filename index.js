@@ -18,35 +18,39 @@ const bodyParser = require('body-parser');
 const app = express();
 const request = require('request');
 const apiKey = '9969ca8563f38339014def2e4c57cbf0';
+const config = require('./config/config');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended : true }));
 
 app.get('/',(req,res)=>{
-    res.render('index',{ weather: null, error: null });
+    res.render('index',{ weather: null,name: config.name, error: null });
 });
 
 app.post('/',(req, res)=>{
-    console.log(req.body.city);
+    // console.log(req.body.city);
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${req.body.city}&units=metric&appid=${apiKey}`;
     request(url,(err, response, body)=>{
         if (err) {
-            res.render('index', {weather: null, error: 'Please Try Again'});
+            res.render('index', {weather: null, name: config.name, error: 'Please Try Again'});
         } else {
             let weather = JSON.parse(body);
-            console.log(weather);
+            // console.log(weather);
             if (weather.main === undefined) {
-                res.render('index', {weather: null, error: 'Please Try Again'});
+                res.render('index', {weather: null, name: config.name, error: 'Please Try Again'});
             } else {
-                res.render('index', {weather: weather, error: null});
+                res.render('index', {weather: weather, name: config.name, error: null});
             }
         }
     });
     // res.render('index',{ weather: null, error: null });
 });
 
-const port = process.env.PORT || 80;
+var port = process.env.PORT || 80;
 
+if(config.dev){
+    port = process.env.PORT || 8000;
+}
 
 app.listen(port);
