@@ -14,9 +14,11 @@
             <input type="submit" class="ghost-button" value="Get Weather Info">
         </form>
         <% if(weather !== null) { %>
-            <p>Temperature : <%=weather.temp%>&degC. </p>
-            <p>Pressure : <%=weather.pressure%> kPa.</p>
-            <p>Humidity : <%=weather.humidity%>%.</p>
+
+            <p>Location : <%=weather.name%>.</p>
+            <p>Temperature : <%=weather.main.temp%>&degC. </p>
+            <p>Pressure : <%=weather.main.pressure%> kPa.</p>
+            <p>Humidity : <%=weather.main.humidity%>%.</p>
         <% } %>
         <% if(error !== null)  {%>
             <p><%=error%></p>

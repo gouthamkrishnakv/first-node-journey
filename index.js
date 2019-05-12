@@ -31,17 +31,15 @@ app.post('/',(req, res)=>{
     console.log(req.body.city);
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${req.body.city}&units=metric&appid=${apiKey}`;
     request(url,(err, response, body)=>{
-        if(err){
-            res.render('index',{weather: null, error: 'Please Try Again'});
-        }
-        else{
+        if (err) {
+            res.render('index', {weather: null, error: 'Please Try Again'});
+        } else {
             let weather = JSON.parse(body);
-            // console.log(weather);
-            if(weather.main === undefined){
+            console.log(weather);
+            if (weather.main === undefined) {
                 res.render('index', {weather: null, error: 'Please Try Again'});
-            }
-            else{
-                res.render('index',{weather: weather.main, error: null});
+            } else {
+                res.render('index', {weather: weather, error: null});
             }
         }
     });
